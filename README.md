@@ -21,8 +21,8 @@ Navigate to https://hybrid-classroom.herokuapp.com and add the following URL end
 
 | Path ending              | Functionality                                                |
 | ------------------------ | ------------------------------------------------------------ |
-| /color                   | Get the bear's current color in the form ({r}, {g}, {b})     |
-| /color?r={r}&g={g}&b={b} | Sets the bear's color to RGB ({r}, {g}, {b}). e.g. `/color?r=40&g=100&b=255` sets it to (40, 100, 255) |
+| /color                   | Get the bear's current color in the form (`r`, `g`, `b`)     |
+| /color?r=`r`&g=`g`&b=`b` | Sets the bear's color to RGB (`r`, `g`, `b`). e.g. `/color?r=40&g=100&b=255` sets it to (40, 100, 255) |
 
 ### Check for Understanding
 
