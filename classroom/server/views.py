@@ -147,6 +147,8 @@ def applause(request, *args, **kwargs):
         return HttpResponse("No session created")
     
     applause_parameter = request.GET.get('active')
+    if applause_parameter is None:
+        return HttpResponse(f"Applause parameter is currently {session.applause}")
 
     if is_true(applause_parameter):
         session.applause = True
