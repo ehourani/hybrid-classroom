@@ -25,7 +25,7 @@ SECRET_KEY = '7d-jb#&$l(i^w6mbl2p$p=)rn+&2$lb(f78m7)6&m00*qao=u_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'hybrid-classroom.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -121,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
