@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from server.views import home, bear, teacher_high_five, mousepad, color, raise_hand, \
+from server.views import home, bear, teacher_high_five, color, raise_hand, \
                          understand, session, session_info, reset, applause, student_high_five
 
 urlpatterns = [
@@ -24,7 +24,6 @@ urlpatterns = [
     path('bear', bear), 
     path('teacher-highfive', teacher_high_five),
     path('student-highfive', student_high_five),
-    path('mousepad', mousepad),
     path('color', color),
     path('raisehand', raise_hand),
     path('understand', understand),

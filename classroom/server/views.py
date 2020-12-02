@@ -109,6 +109,7 @@ def raise_hand(*args, **kwargs):
 Update `understanding` field based on `good` parameter
     ?good=true -> sets understanding to true
     ?good=false -> sets understanding to false
+    ?good=<anything else> -> sets understanding back to None
 '''
 def understand(request, *args, **kwargs):
     session = get_most_recent()
@@ -130,7 +131,9 @@ def understand(request, *args, **kwargs):
         return HttpResponse("Understanding parameter set to False")
 
     else:
-        return HttpResponse("Did not understand `understanding` parameter")
+        session.understanding = None
+        session.save()
+        return HttpResponse("Understanding parameter set to None")
 
 
 '''
