@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from server.views import bear, high_five, mousepad, color, raise_hand, understand \
-                         home, session, session_info, reset, applause
+from server.views import home, bear, teacher_high_five, mousepad, color, raise_hand, \
+                         understand, session, session_info, reset, applause, student_high_five
 
 urlpatterns = [
     path('', home),
     path('bear', bear), 
-    path('highfive', high_five),
+    path('teacher-highfive', teacher_high_five),
+    path('student-highfive', student_high_five),
     path('mousepad', mousepad),
     path('color', color),
     path('raisehand', raise_hand),
