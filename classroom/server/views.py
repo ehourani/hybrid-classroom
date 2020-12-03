@@ -32,11 +32,10 @@ Return bear info in the form:
     "<hand_raised>; (<r>, <g>, <b>)"
 '''
 def bear(*args, **kwargs):
-    # TODO: implement
     session = get_most_recent()
-    color = str((session.color_red, session.color_green, session.color_blue))
+    r, g, b = session.color_red, session.color_green, session.color_blue
     
-    return HttpResponse(str(session.hand_raised) + "; " + color)
+    return HttpResponse(f"{session.hand_raised}&{r}&{g}&{b}")
 
 
 '''Activate high five if currently dectivated'''
