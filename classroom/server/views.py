@@ -64,12 +64,11 @@ def student_high_five(*args, **kwargs):
     return HttpResponse("High five was already inactive")
 
 
-# '''Display mousepad info; will probably delete'''
-# def mousepad(*args, **kwargs):
-#     session = get_most_recent()
+'''Display mousepad info; will probably delete'''
+def mousepad(*args, **kwargs):
+    session = get_most_recent()
 
-#     pass
-
+    return HttpResponse(str(session.high_five))
 
 '''
 Updates color of bear based on provided rgb parameters
