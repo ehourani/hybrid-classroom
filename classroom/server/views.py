@@ -103,6 +103,14 @@ def raise_hand(*args, **kwargs):
     return HttpResponse(f"Toggled raised hand to {session.hand_raised}")
 
 
+'''Toggles negative feedback every time request is sent'''
+def negative(*args, **kwargs):
+    session = get_most_recent()
+    session.negative = False if session.negative else True
+    session.save()
+    return HttpResponse(f"Toggled negative feedback to {session.hand_raised}")
+
+
 '''
 Update `understanding` field based on `good` parameter
     ?good=true -> sets understanding to true

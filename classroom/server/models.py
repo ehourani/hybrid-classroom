@@ -26,6 +26,9 @@ class HybridClassroom(models.Model):
     # Teacher initiated a high five: will be true or false
     high_five = models.BooleanField(default=False)
 
+    # Negative feedback
+    negative = models.BooleanField(default=False)
+
 
     # String representation
     def __str__(self):
