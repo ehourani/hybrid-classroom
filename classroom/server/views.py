@@ -68,7 +68,7 @@ def student_high_five(*args, **kwargs):
 def mousepad(*args, **kwargs):
     session = get_most_recent()
 
-    return HttpResponse(str(session.high_five))
+    return HttpResponse(f"{session.high_five}&{session.negative}")
 
 '''
 Updates color of bear based on provided rgb parameters
