@@ -37,4 +37,5 @@ class HybridClassroom(models.Model):
             f"Hand raised: {self.hand_raised}\n" + \
             f"Understanding: {self.understanding}\n" + \
             f"Applause: {self.applause}\n" + \
-            f"High five: {self.high_five}"
+            f"High five: {self.high_five}\n" + \
+            f"Negative feedback: {self.negative}"

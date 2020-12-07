@@ -35,7 +35,7 @@ def bear(*args, **kwargs):
     session = get_most_recent()
     r, g, b = session.color_red, session.color_green, session.color_blue
     
-    return HttpResponse(f"{session.hand_raised}&{r}&{g}&{b}&{session.understanding}")
+    return HttpResponse(f"{session.hand_raised}&{r}&{g}&{b}&{session.understanding}&{session.applause}")
 
 
 '''Activate high five if currently dectivated'''
