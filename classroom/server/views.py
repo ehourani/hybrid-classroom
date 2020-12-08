@@ -157,7 +157,7 @@ def animal(request, *args, **kwargs):
 
     # Check if animal parameter provided
     if animal_parameter is None:
-        if len(animal_parameter) < 1:
+        if len(session.animal) < 1:
             return HttpResponse("Student did not set animal yet")
         return HttpResponse("https://drive.google.com/drive/folders/1LbinqP_x_u6j35J4gGtjwjyDwUtzJZH9?usp=sharing")
     
