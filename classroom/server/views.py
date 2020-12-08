@@ -143,6 +143,31 @@ def understand(request, *args, **kwargs):
 
 
 '''
+Set animal parameter based on provided value
+    /animal -> google drive link
+    /animal?choice=<animal> -> change server's animal to <animal>
+'''
+def animal(request, *args, **kwargs):
+    session = get_most_recent()
+    if session is None:
+        return HttpResponse("No session created")
+
+    # Parse animal parameter (if existing)
+    animal_parameter = request.GET.get('choice')
+
+    # Check if animal parameter provided
+    if animal_parameter is None:
+        if len(animal_parameter) < 1:
+            return HttpResponse("Student did not set animal yet")
+        return HttpResponse("https://drive.google.com/drive/folders/1LbinqP_x_u6j35J4gGtjwjyDwUtzJZH9?usp=sharing")
+    
+    # If animal parameter provided, update on server
+    session.animal = animal_parameter
+    session.save()
+    return HttpResponse(f"Set student's animal to {session.animal}")
+
+
+'''
 Activate applause based on request parameter `active`
     ?active=true -> sets applause to true
     ?active=false -> sets applause to false

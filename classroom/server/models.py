@@ -29,6 +29,9 @@ class HybridClassroom(models.Model):
     # Negative feedback
     negative = models.BooleanField(default=False)
 
+    # Student's animal parameter
+    animal = models.CharField(max_length=200, default='')
+
 
     # String representation
     def __str__(self):
@@ -38,4 +41,5 @@ class HybridClassroom(models.Model):
             f"Understanding: {self.understanding}\n" + \
             f"Applause: {self.applause}\n" + \
             f"High five: {self.high_five}\n" + \
-            f"Negative feedback: {self.negative}"
+            f"Negative feedback: {self.negative}\n" + \
+            f"Animal: {self.animal}"
