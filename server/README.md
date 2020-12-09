@@ -1,5 +1,9 @@
-# hybrid-classroom-server
+# Hybrid Classroom Server
 Hybrid classroom server for the 6.810 final project!
+
+Server framework: Django
+
+Deployment via Heroku
 
 
 
@@ -15,7 +19,8 @@ Navigate to https://hybrid-classroom.herokuapp.com and add the following URL end
 | /session         | Creates a new hybrid classroom                               |
 | /current-session | Displays information about the current hybrid classroom      |
 | /reset           | Deletes all hybrid classrooms created thus far               |
-| /bear            | Gives information about the bear in the form: `<hand_raised>; (<r>, <g>, <b>)` |
+| /bear            | Gives information about the bear in the form: `<hand_raised>&<r>&<g>&<b>&<understanding>&<applause>` |
+| /mousepad        | Gives information about the mousepad in the form: `<high_five>&<negative_feedback>` |
 
 ### Changing Color
 
@@ -47,9 +52,23 @@ Navigate to https://hybrid-classroom.herokuapp.com and add the following URL end
 | /applause?active=true  | Activates student's applause                   |
 | /applause?active=false | Deactivates student's applause                 |
 
-### High-Five
+### Positive Feedback: High Five
 
 | Path ending       | Functionality                          |
 | ----------------- | -------------------------------------- |
 | /teacher-highfive | Initiates a high five from the teacher |
 | /student-highfive | Student responds to a high five        |
+
+### Negative Feedback: Encouragement Message
+
+| Path ending | Functionality                                                |
+| ----------- | ------------------------------------------------------------ |
+| /negative   | Toggles negative feedback to student (1st push = display, 2nd push = un-display) |
+
+### Picking an Animal
+
+| Path ending             | Functionality                                                |
+| ----------------------- | ------------------------------------------------------------ |
+| /animal                 | Used by teacher to see link to student's selected animal STL file. If student has not picked, will let teacher know |
+| /animal?choice=`animal` | Used by student to choose an animal. Sets the animal parameter to `animal` |
+
